@@ -1,0 +1,10 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /alloc/logs/*
+output.elasticsearch:
+  hosts: ["https://${ELASTICSEARCH_URL}:443"]
+fields:
+  nomad_alloc_name: "${NOMAD_ALLOC_NAME}"
+logging.to_files: false
+logging.to_syslog: false
