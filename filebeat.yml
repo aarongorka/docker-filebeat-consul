@@ -1,7 +1,7 @@
 filebeat.prospectors:
 - input_type: log
   paths:
-    - /alloc/logs/*
+    - /alloc/logs/api*0 
 output.elasticsearch:
   hosts: ["https://${ELASTICSEARCH_URL}:443"]
   index: "filebeat-${NOMAD_META_name}-%{+yyyy.MM.dd}"
